@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-
+import { BrowserRouter,Route,Switch,Link } from 'react-router-dom';
+import HomeeScreen from './Screens/HomeScreen';
+import ProductScreen from './Screens/ProductScreen';
 function App() {
   const openMenu = () => {
     document.querySelector(".sidebar").classList.add("open");
@@ -9,13 +11,14 @@ function App() {
     document.querySelector(".sidebar").classList.remove("open")
   }
   return (
+    <BrowserRouter>
     <div className="grid-container">
     <header className="header">
       <div className="brand">
         <button onClick={openMenu}>
           &#9776;
         </button>
-        <a href="index.html">Qraft Store</a>
+        <Link to="/">Qraft Store</Link>
       </div>
       <div className="header-links">
         <a href="cart.html">Cart</a>
@@ -38,75 +41,10 @@ function App() {
     </aside>
     <main className="main">
       <div className="content">
-        <ul className="products">
-          <li>
-            <div className="product">
-              <img className="product-image" src="/images/d3.jpg" alt="product" />
-              <div className="product-name">
-                <a href="product.html">Lamp Ornament</a>
-              </div>
-              <div className="product-brand">Qraft Store</div>
-              <div className="product-price">$10</div>
-              <div className="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-          </li>
-          <li>
-            <div className="product">
-              <img className="product-image" src="/images/d2.jpg" alt="product" />
-              <div className="product-name">
-                <a href="product.html">Flower Vessel Set</a>
-              </div>
-              <div className="product-brand">Qraft Store</div>
-              <div className="product-price">$10</div>
-              <div className="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-          </li>
-          <li>
-            <div className="product">
-              <img className="product-image" src="images/d7.jpeg" alt="product" />
-              <div className="product-name">
-                <a href="product.html">Wall Hanging</a>
-              </div>
-              <div className="product-brand">Qraft Store</div>
-              <div className="product-price">$10</div>
-              <div className="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-          </li>
-          <li>
-            <div className="product">
-              <img className="product-image" src="images/d4.jpg" alt="product" />
-              <div className="product-name">
-                <a href="product.html">Flower Pots</a>
-              </div>
-              <div className="product-brand">Qraft Store</div>
-              <div className="product-price">$10</div>
-              <div className="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-          </li>
-          <li>
-            <div className="product">
-              <img className="product-image" src="images/d5.jpg" alt="product" />
-              <div className="product-name">
-                <a href="product.html">Tyre Coffe Table</a>
-              </div>
-              <div className="product-brand">Qraft Store</div>
-              <div className="product-price">$10</div>
-              <div className="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-          </li>
-          <li>
-            <div className="product">
-              <img className="product-image" src="images/d7.jpg" alt="product" />
-              <div className="product-name">
-                <a href="product.html">Wall Mirror</a>
-              </div>
-              <div className="product-brand">Qraft Store</div>
-              <div className="product-price">$10</div>
-              <div className="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-          </li>
-
-        </ul>
+        <Switch>
+        <Route path ="/" exact={true} component ={HomeeScreen}/>
+        <Route path="/product/:id" component ={ProductScreen}/>
+        </Switch>
       </div>
 
     </main>
@@ -114,6 +52,7 @@ function App() {
       All right reserved.
     </footer>
   </div>
+  </BrowserRouter>
   );
 }
 
