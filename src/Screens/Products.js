@@ -26,7 +26,7 @@ const Products = () => {
     return (
         <div>
         
-            <div class="product">
+            {/* <div class="product">
                 <img class="product-image" src={products.image} alt="product"/>
               <div class="product-name">
                 <a href="product.html">Slim Shirt</a>
@@ -34,7 +34,8 @@ const Products = () => {
     <div class="product-brand">{products.title}</div>
     <div class="product-price">Shs{products.price}</div>
               <div class="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
+            </div> */}
+            
           
             
         </div>

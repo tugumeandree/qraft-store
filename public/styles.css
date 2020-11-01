@@ -114,6 +114,7 @@ html{
     width: 30rem;
     background-color: #f0f0f0;
     height: 100%;
+    z-index: 5000;
   }
   .sidebar.open{
     transform: translateX(0);
@@ -131,4 +132,35 @@ html{
     position: absolute;
     right: .5rem;
     top: 1.5rem
+  }
+
+  .meddon{
+    font-family: 'Meddon', cursive;
+  }
+  img{
+    background-repeat: norepeat;
+    background-position: 50% 20%;
+      rgba(0, 0, 0, 0.7)
+      background-blend-mode: multiply;
+      -webkit-animation: myfirst 2s; /* Chrome, Safari, Opera */
+      animation: myfirst 2000;
+      animation-play-state: running;
+      -webkit-animation-play-state: running;
+   
+  }
+  nav .brand-logo{
+    color:orange;
+    font-family: 'Meddon', cursive;
+    margin:5px 280px 2px 0;
+  }
+  
+  @-webkit-keyframes myfirst {
+      from {
+      background-position: bottom center;
+      background-size: cover;
+      }
+      to { 
+        background-position: top center;
+        background-size: cover;
+      }
   }
