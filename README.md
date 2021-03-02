@@ -1,2 +1,2 @@
 # qraft-store
-Online custom-made crafts shop 
+Visual Art Collection/Gallery/Museum 
